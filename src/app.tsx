@@ -6,9 +6,11 @@ import { store, persistor } from './store';
 import { AppNavigator } from '@/navigation';
 
 import i18n from '@/i18n';
+// import messaging from '@react-native-firebase/messaging';
 
 const Chatwoot = () => {
   useEffect(() => {
+    // getFcmToken();
     BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
     return () => {
       BackHandler.removeEventListener('hardwareBackPress', handleBackButtonClick);
@@ -39,5 +41,8 @@ const Chatwoot = () => {
     </Provider>
   );
 };
-
+// async function getFcmToken() {
+//   const token = await messaging().getToken();
+//   console.log('FCM Registration Token:', token);
+// }
 export default Chatwoot;
