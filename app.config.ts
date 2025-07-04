@@ -3,7 +3,7 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 export default ({ config }: ConfigContext): ExpoConfig => {
   return {
     name: 'Orencloud',
-    slug: process.env.EXPO_PUBLIC_APP_SLUG || 'orencloud-mobile',
+    slug: process.env.EXPO_PUBLIC_APP_SLUG || 'orencloud',
     version: '4.0.18',
     orientation: 'portrait',
     icon: './assets/icon.png',
@@ -31,7 +31,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       },
       // Please use the relative path to the google-services.json file
       // googleServicesFile: "./GoogleService-Info.plist",
-      googleServicesFile: process.env.EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE || './GoogleService-Info.plist',
+      googleServicesFile: process.env.EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE || './ios/GoogleService-Info.plist',
       entitlements: { 'aps-environment': 'production' },
       associatedDomains: ['applinks:app.chatwoot.com'],
     },
@@ -47,7 +47,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       ],
       // Please use the relative path to the google-services.json file
       // googleServicesFile: "./google-services.json",
-      googleServicesFile: process.env.EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE || './google-services.json',
+      googleServicesFile: "./google-services.json",
       intentFilters: [
         {
           action: 'VIEW',
@@ -66,11 +66,11 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     extra: {
       eas: {
-        projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
+        projectId: '3e6249b7-3f08-4769-8084-cf26faaf79af',
         storybookEnabled: process.env.EXPO_STORYBOOK_ENABLED,
       },
     },
-    owner: 'orencloud',
+    owner: 'farzingh',
     plugins: [
       'expo-font',
       ['react-native-permissions', { iosPermissions: ['Camera', 'PhotoLibrary', 'MediaLibrary'] }],
