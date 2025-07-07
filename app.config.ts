@@ -1,4 +1,5 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
+import path from 'path'
 
 export default ({ config }: ConfigContext): ExpoConfig => {
   return {
@@ -47,7 +48,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       ],
       // Please use the relative path to the google-services.json file
       // googleServicesFile: "./google-services.json",
-      googleServicesFile: "./android/app/google-services.json",
+      googleServicesFile: './google-services.json',
       intentFilters: [
         {
           action: 'VIEW',
